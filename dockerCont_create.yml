@@ -11,4 +11,4 @@
         image: "amitvpawar/containeransible:{{Docker_TAG}}"
         state: started
         published_ports:
-          - :8787:80"
+          - "8787:80"
