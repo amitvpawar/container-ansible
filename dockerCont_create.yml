@@ -1,0 +1,14 @@
+---
+- name: play to Deploy Docker container
+  hosts: localhost #YOU CCAN ADD NODES AS PER YOUR REQUIREMENTS
+  remote_user: jenkins
+  gather_facts: false
+  become: true
+  tasks:
+    - name: deploy docker contaier
+      docker_container:
+        name: Ansible_Container
+        image: "amitvpawar/containeransible:{{Docker_TAG}}"
+        state: started
+        published_ports:
+          - :8787:80"
